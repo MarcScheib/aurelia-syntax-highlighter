@@ -1,0 +1,26 @@
+<template>
+  <h1>Syntax Highlighting</h1>
+  <h2>CSS</h2>
+  <pre><code class="language-css" au-syntax>
+.splash {
+  text-align: center;
+  margin: 10% 0 0 0;
+  box-sizing: border-box;
+}</code></pre>
+
+  <h2>JavaScript</h2>
+    <pre><code class="language-javascript" au-syntax>
+function(async, callback) {
+  var env = {
+    callback: callback,
+    selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+  };
+
+  _.hooks.run("before-highlightall", env);
+
+  var elements = env.elements || document.querySelectorAll(env.selector);
+  for (var i=0, element; element = elements[i++];) {
+    _.highlightElement(element, async === true, env.callback);
+  }
+}</code></pre>
+</template>
