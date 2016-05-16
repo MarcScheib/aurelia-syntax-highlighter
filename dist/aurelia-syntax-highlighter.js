@@ -1,9 +1,10 @@
 import 'prism';
-import {customAttribute} from 'aurelia-framework';
+import {customAttribute,inject} from 'aurelia-framework';
 
 @customAttribute('au-syntax')
+@inject(Element)
 export class SyntaxHighlighter {
-  constructor() {
-    console.log("oha");
+  constructor(element) {
+    Prism.highlightElement(element);
   }
 }
