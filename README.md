@@ -9,11 +9,74 @@
 
 ## Documentation
 
-TBD
+### Installation
+
+The plugin installation happens via JSPM. Go to your project and verify npm (```npm install```) and jspm (```jspm install```) installation was already executed.
+
+Now, you can install the syntax highlighter plugin via the following command:
+
+```
+jspm install aurelia-syntax-highlighter
+```
+
+The command will add the plugin source code to your _jspm_packages_ directory as well as a mapping into your _config.js_ which looks similar to the following:
+
+```
+"aurelia-syntax-highlighter": "github:MarcScheib/aurelia-syntax-highlighter@x.y.z"
+```
+
+You can also add a specific branch to your application if you are looking for technical previews by executing the following command:
+
+```
+jspm install aurelia-syntax-highlighter=github:MarcScheib/aurelia-syntax-highlighter@master
+```
+
+This will add the current _master_ branch instead of the latest tagged version.
+
+### Plugin Configuration in your Application
+
+During the bootstrapping of the Aurelia Framework, you can include the syntax highlighter plugin by simply adding it to the list of loaded plugins:
+
+```javascript
+export function configure(aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .developmentLogging()
+    ...
+    .plugin('aurelia-syntax-highlighter'); // Add this line to load the plugin
+
+  aurelia.start().then(a => a.setRoot('app', document.body));
+}
+```
+
+In addition, you need to include a CSS file for syntax highlighting. You can go with your own one or use provided ones by Prism. E.g., include the following line in your ```index.html```:
+
+```html
+<link rel="stylesheet" href="jspm_packages/github/PrismJS/prism@1.5.0/themes/prism.css">
+```
+
+### Usage
+
+You can now use the plugin to highlight your syntax. Simply add the ```au-syntax``` attribute to your ```<code>```, e.g.:
+
+```html
+<pre><code class="language-css" au-syntax>
+.splash {
+  text-align: center;
+  margin: 10% 0 0 0;
+  box-sizing: border-box;
+}</code></pre>
+```
 
 ## Dependencies
 
-This plugin has no external library dependencies.
+Aurelia dependencies:
+
+* [aurelia-framework](https://github.com/aurelia/framework)
+
+External dependencies:
+
+* [Prism](https://github.com/PrismJS/prism)
 
 ## Used By
 
