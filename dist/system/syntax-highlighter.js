@@ -15,11 +15,19 @@ System.register(['aurelia-framework', 'prismjs'], function (_export, _context) {
       inject = _aureliaFramework.inject;
     }, function (_prismjs) {}],
     execute: function () {
-      _export('SyntaxHighlighter', SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec2 = inject(Element), _dec(_class = _dec2(_class = function SyntaxHighlighter(element) {
-        _classCallCheck(this, SyntaxHighlighter);
+      _export('SyntaxHighlighter', SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec2 = inject(Element), _dec(_class = _dec2(_class = function () {
+        function SyntaxHighlighter(element) {
+          _classCallCheck(this, SyntaxHighlighter);
 
-        Prism.highlightElement(element);
-      }) || _class) || _class));
+          this.element = element;
+        }
+
+        SyntaxHighlighter.prototype.bind = function bind() {
+          Prism.highlightElement(this.element);
+        };
+
+        return SyntaxHighlighter;
+      }()) || _class) || _class));
 
       _export('SyntaxHighlighter', SyntaxHighlighter);
     }

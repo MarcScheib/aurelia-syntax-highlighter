@@ -52,6 +52,28 @@
               }
             }
           ]
+        },
+        {
+          "id": 7,
+          "name": "bind",
+          "kind": 2048,
+          "kindString": "Method",
+          "flags": {
+            "isExported": true
+          },
+          "signatures": [
+            {
+              "id": 8,
+              "name": "bind",
+              "kind": 4096,
+              "kindString": "Call signature",
+              "flags": {},
+              "type": {
+                "type": "instrinct",
+                "name": "any"
+              }
+            }
+          ]
         }
       ],
       "groups": [
@@ -60,6 +82,13 @@
           "kind": 512,
           "children": [
             4
+          ]
+        },
+        {
+          "title": "Methods",
+          "kind": 2048,
+          "children": [
+            7
           ]
         }
       ]

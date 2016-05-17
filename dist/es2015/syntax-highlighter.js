@@ -5,6 +5,10 @@ import 'prismjs';
 
 export let SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec2 = inject(Element), _dec(_class = _dec2(_class = class SyntaxHighlighter {
   constructor(element) {
-    Prism.highlightElement(element);
+    this.element = element;
+  }
+
+  bind() {
+    Prism.highlightElement(this.element);
   }
 }) || _class) || _class);

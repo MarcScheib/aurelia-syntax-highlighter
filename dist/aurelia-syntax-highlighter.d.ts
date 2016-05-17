@@ -6,5 +6,6 @@ declare module 'aurelia-syntax-highlighter' {
   } from 'aurelia-framework';
   export class SyntaxHighlighter {
     constructor(element?: any);
+    bind(): any;
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "aurelia-syntax-highlighter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An syntax highlighting plugin for Aurelia based on PrismJS.",
   "keywords": [
     "aurelia",
