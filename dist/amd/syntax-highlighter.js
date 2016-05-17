@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-framework', 'prism'], function (exports, _aureliaFramework) {
+define(['exports', 'aurelia-framework', 'prismjs'], function (exports, _aureliaFramework) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {

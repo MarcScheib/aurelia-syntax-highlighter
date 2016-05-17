@@ -1,5 +1,5 @@
 import {customAttribute, inject} from 'aurelia-framework';
-import 'prism';
+import 'prismjs';
 
 @customAttribute('au-syntax')
 @inject(Element)

@@ -32,7 +32,7 @@
     },
     "dependencies": {
       "aurelia-framework": "^1.0.0-beta.1.2.4",
-      "prism": "github:PrismJS/prism@^1.5.0"
+      "prismjs": "^1.5.0"
     },
     "devDependencies": {
       "aurelia-pal-browser": "^1.0.0-beta.1.2.1",
@@ -43,7 +43,8 @@
     }
   },
   "dependencies": {
-    "aurelia-framework": "^1.0.0-beta.1.2.4"
+    "aurelia-framework": "^1.0.0-beta.1.2.4",
+    "prismjs": "^1.5.0"
   },
   "devDependencies": {
     "aurelia-tools": "^0.2.0",

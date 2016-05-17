@@ -3,7 +3,7 @@
     "dependencies": {
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.2.1",
       "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.2.4",
-      "prism": "github:PrismJS/prism@^1.5.0"
+      "prismjs": "npm:prismjs@^1.5.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.38",
