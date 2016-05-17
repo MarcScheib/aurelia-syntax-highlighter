@@ -1,5 +1,5 @@
 declare module 'aurelia-syntax-highlighter' {
-  import 'prism';
+  import 'prismjs';
   import {
     customAttribute,
     inject

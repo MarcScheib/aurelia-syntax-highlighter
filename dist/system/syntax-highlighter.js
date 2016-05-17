@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['aurelia-framework', 'prism'], function (_export, _context) {
+System.register(['aurelia-framework', 'prismjs'], function (_export, _context) {
   var customAttribute, inject, _dec, _dec2, _class, SyntaxHighlighter;
 
   function _classCallCheck(instance, Constructor) {
@@ -13,7 +13,7 @@ System.register(['aurelia-framework', 'prism'], function (_export, _context) {
     setters: [function (_aureliaFramework) {
       customAttribute = _aureliaFramework.customAttribute;
       inject = _aureliaFramework.inject;
-    }, function (_prism) {}],
+    }, function (_prismjs) {}],
     execute: function () {
       _export('SyntaxHighlighter', SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec2 = inject(Element), _dec(_class = _dec2(_class = function SyntaxHighlighter(element) {
         _classCallCheck(this, SyntaxHighlighter);

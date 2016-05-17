@@ -9,7 +9,7 @@ var _dec, _dec2, _class;
 
 var _aureliaFramework = require('aurelia-framework');
 
-require('prism');
+require('prismjs');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 

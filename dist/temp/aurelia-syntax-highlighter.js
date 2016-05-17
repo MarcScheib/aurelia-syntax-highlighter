@@ -7,7 +7,7 @@ exports.SyntaxHighlighter = undefined;
 
 var _dec, _dec2, _class;
 
-require('prism');
+require('prismjs');
 
 var _aureliaFramework = require('aurelia-framework');
 

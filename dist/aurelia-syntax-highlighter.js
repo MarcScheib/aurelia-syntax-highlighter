@@ -1,4 +1,4 @@
-import 'prism';
+import 'prismjs';
 import {customAttribute,inject} from 'aurelia-framework';
 
 @customAttribute('au-syntax')
