@@ -5,6 +5,10 @@ import 'prismjs';
 @inject(Element)
 export class SyntaxHighlighter {
   constructor(element) {
-    Prism.highlightElement(element);
+    this.element = element;
+  }
+
+  bind() {
+    Prism.highlightElement(this.element);
   }
 }
