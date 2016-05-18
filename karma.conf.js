@@ -1,6 +1,5 @@
 var isparta = require('isparta');
 var paths = require('./build/paths');
-var babelOptions = require('./build/babel-options');
 
 module.exports = function(config) {
   var configuration = {
@@ -14,7 +13,7 @@ module.exports = function(config) {
     },
 
     // list of files / patterns to load in the browser
-    files: ['node_modules/whatwg-fetch/fetch.js'],
+    files: [],
 
     // list of files to exclude
     exclude: [],
