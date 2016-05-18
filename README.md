@@ -1,7 +1,7 @@
 # aurelia-syntax-highlighter
 
 [![Build Status](https://travis-ci.org/MarcScheib/aurelia-syntax-highlighter.svg?branch=master)](https://travis-ci.org/MarcScheib/aurelia-syntax-highlighter) 
-[![Coverage Status](https://coveralls.io/repos/MarcScheib/aurelia-syntax-highlighter/badge.svg?branch=master&service=github)](https://coveralls.io/github/MarcScheib/aurelia-syntax-highlighter?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/MarcScheib/aurelia-syntax-highlighter/badge.svg?branch=master)](https://coveralls.io/github/MarcScheib/aurelia-syntax-highlighter?branch=master)
 [![devDependency Status](https://img.shields.io/david/dev/MarcScheib/aurelia-syntax-highlighter.svg)](https://david-dm.org/MarcScheib/aurelia-syntax-highlighter#info=devDependencies)
 [![npm Version](https://img.shields.io/npm/v/aurelia-syntax-highlighter.svg)](https://www.npmjs.com/package/aurelia-syntax-highlighter)
 
