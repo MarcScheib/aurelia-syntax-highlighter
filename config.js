@@ -15,12 +15,14 @@ System.config({
   },
 
   map: {
+    "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.2.1",
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.0-beta.1.2.1",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.2.5",
     "aurelia-history-browser": "npm:aurelia-history-browser@1.0.0-beta.1.2.1",
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0-beta.1.2.2",
     "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0-beta.1.2.1",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.1.4",
+    "aurelia-templating": "npm:aurelia-templating@1.0.0-beta.1.2.7",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.2.4",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.2.6",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.2.1",
