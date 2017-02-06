@@ -106,10 +106,10 @@ Before you submit your pull request consider the following guidelines:
 
 If the PR gets too outdated we may ask you to rebase and force push to update the PR:
 
-    ```shell
-    git rebase master -i
-    git push origin my-fix-branch -f
-    ```
+```shell
+git rebase master -i
+git push origin my-fix-branch -f
+```
 
 *WARNING. Squashing or reverting commits and forced push thereafter may remove GitHub comments
 on code that were previously made by you and others in your commits.*
@@ -168,6 +168,10 @@ format that includes a **type**, a **scope**, and a **subject**:
 <type>(<scope>): <subject>
 <BLANK LINE>
 <body>
+<BLANK LINE>
+---
+<BLANK LINE>
+<diff>
 ```
 
 The **header** is mandatory and the **scope** of the header is optional.
@@ -212,5 +216,10 @@ The body should include the motivation for the change and contrast this with pre
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. 
 The rest of the commit message is then used for this.
 
-[github]: https://github.com/MarcScheib/aurelia-syntax-highlighter 
+### Diff
+Add the diff of the commit from `git diff HEAD --stat=73`
+A git diff from a sub directory is possible with the parameter ```--relative```.
+Filter can be used via ```--diff-filter=[(A|C|D|M|R|T|U|X|B)…​[*]]```.
+
+[github]: https://github.com/MarcScheib/aurelia-syntax-highlighter
 [stackoverflow]: http://stackoverflow.com/

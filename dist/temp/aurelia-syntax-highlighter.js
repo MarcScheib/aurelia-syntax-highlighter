@@ -5,15 +5,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SyntaxHighlighter = undefined;
 
-var _dec, _dec2, _class;
+var _dec, _class, _class2, _temp;
 
 require('prismjs');
 
-var _aureliaFramework = require('aurelia-framework');
+var _aureliaTemplating = require('aurelia-templating');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var SyntaxHighlighter = exports.SyntaxHighlighter = (_dec = (0, _aureliaFramework.customAttribute)('au-syntax'), _dec2 = (0, _aureliaFramework.inject)(Element), _dec(_class = _dec2(_class = function () {
+var SyntaxHighlighter = exports.SyntaxHighlighter = (_dec = (0, _aureliaTemplating.customAttribute)('au-syntax'), _dec(_class = (_temp = _class2 = function () {
   function SyntaxHighlighter(element) {
     _classCallCheck(this, SyntaxHighlighter);
 
@@ -25,4 +25,4 @@ var SyntaxHighlighter = exports.SyntaxHighlighter = (_dec = (0, _aureliaFramewor
   };
 
   return SyntaxHighlighter;
-}()) || _class) || _class);
+}(), _class2.inject = [Element], _temp)) || _class);

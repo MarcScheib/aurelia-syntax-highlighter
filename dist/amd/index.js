@@ -1,16 +1,16 @@
-define(['exports', './syntax-highlighter'], function (exports, _syntaxHighlighter) {
+define(['exports', './aurelia-syntax-highlighter'], function (exports, _aureliaSyntaxHighlighter) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.configure = exports.SyntaxHighlighter = undefined;
-
-
-  function configure(config) {
-    config.globalResources('./syntax-highlighter');
-  }
-
-  exports.SyntaxHighlighter = _syntaxHighlighter.SyntaxHighlighter;
-  exports.configure = configure;
+  Object.keys(_aureliaSyntaxHighlighter).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function () {
+        return _aureliaSyntaxHighlighter[key];
+      }
+    });
+  });
 });

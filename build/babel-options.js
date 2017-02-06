@@ -1,8 +1,9 @@
 var path = require('path');
 var paths = require('./paths');
 
+
 exports.base = function () {
-  return {
+  var config = {
     filename: '',
     filenameRelative: '',
     sourceMap: true,
@@ -16,16 +17,22 @@ exports.base = function () {
     plugins: [
       'syntax-flow',
       'transform-decorators-legacy',
+    ]
+  };
+  if (!paths.useTypeScriptForDTS) {
+    config.plugins.push(
       ['babel-dts-generator', {
         packageName: paths.packageName,
         typings: '',
         suppressModulePath: true,
         suppressComments: false,
-        memberOutputFilter: /^_.*/
-      }],
-      'transform-flow-strip-types'
-    ]
-  };
+        memberOutputFilter: /^_.*/,
+        suppressAmbientDeclaration: true
+      }]
+    );
+  }
+  config.plugins.push('transform-flow-strip-types');
+  return config;
 };
 
 exports.commonjs = function () {
@@ -49,5 +56,11 @@ exports.system = function () {
 exports.es2015 = function () {
   var options = exports.base();
   options.presets = ['stage-1'];
+  return options;
+};
+
+exports['native-modules'] = function() {
+  var options = exports.base();
+  options.presets[0] = 'es2015-loose-native-modules';
   return options;
 };

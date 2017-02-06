@@ -1,11 +1,9 @@
-declare module 'aurelia-syntax-highlighter' {
-  import 'prismjs';
-  import {
-    customAttribute,
-    inject
-  } from 'aurelia-framework';
-  export class SyntaxHighlighter {
-    constructor(element?: any);
-    bind(): any;
-  }
+import 'prismjs';
+import {
+  customAttribute
+} from 'aurelia-templating';
+export declare class SyntaxHighlighter {
+  static inject: any;
+  constructor(element?: any);
+  bind(): any;
 }

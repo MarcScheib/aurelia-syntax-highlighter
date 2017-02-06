@@ -1,9 +1,9 @@
 {
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.2.1",
-      "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.2.5",
-      "prismjs": "npm:prismjs@^1.5.0"
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.0.1",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.8",
+      "prismjs": "npm:prismjs@1.5.1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.38",
@@ -12,6 +12,6 @@
     }
   },
   "devDependencies": {
-    "jspm": "^0.16.34"
+    "jspm": "^0.16.52"
   }
 }

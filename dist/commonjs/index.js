@@ -3,13 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.configure = exports.SyntaxHighlighter = undefined;
 
-var _syntaxHighlighter = require('./syntax-highlighter');
+var _aureliaSyntaxHighlighter = require('./aurelia-syntax-highlighter');
 
-function configure(config) {
-  config.globalResources('./syntax-highlighter');
-}
-
-exports.SyntaxHighlighter = _syntaxHighlighter.SyntaxHighlighter;
-exports.configure = configure;
+Object.keys(_aureliaSyntaxHighlighter).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _aureliaSyntaxHighlighter[key];
+    }
+  });
+});

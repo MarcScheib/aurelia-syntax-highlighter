@@ -1,9 +1,10 @@
-var _dec, _dec2, _class;
+var _dec, _class, _class2, _temp;
 
-import { customAttribute, inject } from 'aurelia-framework';
+import { customAttribute } from 'aurelia-templating';
 import 'prismjs';
 
-export let SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec2 = inject(Element), _dec(_class = _dec2(_class = class SyntaxHighlighter {
+export let SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec(_class = (_temp = _class2 = class SyntaxHighlighter {
+
   constructor(element) {
     this.element = element;
   }
@@ -11,4 +12,4 @@ export let SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec2 = inj
   bind() {
     Prism.highlightElement(this.element);
   }
-}) || _class) || _class);
+}, _class2.inject = [Element], _temp)) || _class);

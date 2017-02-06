@@ -9,13 +9,24 @@ var concat = require('gulp-concat');
 var insert = require('gulp-insert');
 var rename = require('gulp-rename');
 var tools = require('aurelia-tools');
-var del = require('del');
-var vinylPaths = require('vinyl-paths');
+var ts = require('gulp-typescript');
+var gutil = require('gulp-util');
+var gulpIgnore = require('gulp-ignore');
+var merge = require('merge2');
 
 var jsName = paths.packageName + '.js';
+var compileToModules = ['es2015', 'commonjs', 'amd', 'system', 'native-modules'];
+
+function cleanGeneratedCode() {
+  return through2.obj(function(file, enc, callback) {
+    file.contents = new Buffer(tools.cleanGeneratedCode(file.contents.toString('utf8')));
+    this.push(file);
+    return callback();
+  });
+}
 
 function removeDTSPlugin(options) {
-  var found = options.plugins.find(function (x) {
+  var found = options.plugins.find(function(x){
     return x instanceof Array;
   });
 
@@ -24,28 +35,31 @@ function removeDTSPlugin(options) {
   return options;
 }
 
-gulp.task('build-index', function () {
-  var importsToAdd = [];
+gulp.task('build-index', function() {
+  var importsToAdd = paths.importsToAdd.slice();
 
-  return gulp.src([
-      paths.root + '*.js',
-      paths.root + '**/*.js',
-      '!' + paths.root + 'index.js'])
-    .pipe(through2.obj(function (file, enc, callback) {
-      file.contents = new Buffer(tools.extractImports(file.contents.toString("utf8"), importsToAdd));
-      this.push(file);
-      return callback();
-    }))
+  var src = gulp.src(paths.files);
+
+  if (paths.sort) {
+    src = src.pipe(tools.sortFiles());
+  }
+
+  if (paths.ignore) {
+    paths.ignore.forEach(function(filename){
+      src = src.pipe(gulpIgnore.exclude(filename));
+    });
+  }
+
+  return src.pipe(through2.obj(function(file, enc, callback) {
+    file.contents = new Buffer(tools.extractImports(file.contents.toString('utf8'), importsToAdd));
+    this.push(file);
+    return callback();
+  }))
     .pipe(concat(jsName))
-    .pipe(insert.transform(function (contents) {
+    .pipe(insert.transform(function(contents) {
       return tools.createImportBlock(importsToAdd) + contents;
     }))
     .pipe(gulp.dest(paths.output));
-});
-
-gulp.task('build-html-es2015', function () {
-  return gulp.src(paths.html)
-    .pipe(gulp.dest(paths.output + 'es2015'));
 });
 
 gulp.task('build-es2015-temp', function () {
@@ -54,72 +68,39 @@ gulp.task('build-es2015-temp', function () {
     .pipe(gulp.dest(paths.output + 'temp'));
 });
 
-gulp.task('build-es2015', ['build-html-es2015'], function () {
-  return gulp.src(paths.source)
-    .pipe(to5(assign({}, removeDTSPlugin(compilerOptions.es2015()))))
-    .pipe(gulp.dest(paths.output + 'es2015'));
+function gulpFileFromString(filename, string) {
+  var src = require('stream').Readable({ objectMode: true });
+  src._read = function() {
+    this.push(new gutil.File({ cwd: paths.appRoot, base: paths.output, path: filename, contents: new Buffer(string) }))
+    this.push(null)
+  };
+  return src;
+}
+
+function srcForBabel() {
+  return merge(
+    gulp.src(paths.source),
+    gulpFileFromString(paths.output + 'index.js', "export * from './" + paths.packageName + "';")
+  );
+}
+
+compileToModules.forEach(function(moduleType){
+  gulp.task('build-babel-' + moduleType, function () {
+    return srcForBabel()
+      .pipe(to5(assign({}, removeDTSPlugin(compilerOptions[moduleType]()))))
+      .pipe(cleanGeneratedCode())
+      .pipe(gulp.dest(paths.output + moduleType));
+  });
 });
 
-gulp.task('build-commonjs', ['build-html-commonjs'], function () {
-  return gulp.src(paths.source)
-    .pipe(to5(assign({}, removeDTSPlugin(compilerOptions.commonjs()))))
-    .pipe(gulp.dest(paths.output + 'commonjs'));
-});
-
-gulp.task('build-amd', ['build-html-amd'], function () {
-  return gulp.src(paths.source)
-    .pipe(to5(assign({}, removeDTSPlugin(compilerOptions.amd()))))
-    .pipe(gulp.dest(paths.output + 'amd'));
-});
-
-gulp.task('build-system', ['build-html-system'], function () {
-  return gulp.src(paths.source)
-    .pipe(to5(assign({}, removeDTSPlugin(compilerOptions.system()))))
-    .pipe(gulp.dest(paths.output + 'system'));
-});
-
-gulp.task('build-html-es6', function () {
-  return gulp.src(paths.html)
-    .pipe(gulp.dest(paths.output + 'es6'));
-});
-
-gulp.task('build-html-commonjs', function () {
-  return gulp.src(paths.html)
-    .pipe(gulp.dest(paths.output + 'commonjs'));
-});
-
-gulp.task('build-html-amd', function () {
-  return gulp.src(paths.html)
-    .pipe(gulp.dest(paths.output + 'amd'));
-});
-
-gulp.task('build-html-system', function () {
-  return gulp.src(paths.html)
-    .pipe(gulp.dest(paths.output + 'system'));
-});
-
-gulp.task('build-dts', function () {
-  var tdsPath = paths.output + paths.packageName + '.d.ts';
-  return gulp.src(tdsPath)
-    .pipe(rename(paths.packageName + '.d.ts'))
-    .pipe(gulp.dest(paths.output + 'es2015'))
-    .pipe(gulp.dest(paths.output + 'commonjs'))
-    .pipe(gulp.dest(paths.output + 'amd'))
-    .pipe(gulp.dest(paths.output + 'system'));
-});
-
-gulp.task('remove-dts-folder', function () {
-  var tdsFolder = paths.output + paths.packageName;
-  return gulp.src([tdsFolder])
-    .pipe(vinylPaths(del));
-});
-
-gulp.task('build', function (callback) {
+gulp.task('build', function(callback) {
   return runSequence(
     'clean',
     'build-index',
-    ['build-es2015-temp', 'build-commonjs', 'build-amd', 'build-system', 'build-es2015'],
-    'build-dts',
+    'build-es2015-temp',
+    compileToModules
+      .map(function(moduleType) { return 'build-babel-' + moduleType })
+      .concat(paths.useTypeScriptForDTS ? ['build-dts'] : []),
     callback
   );
 });

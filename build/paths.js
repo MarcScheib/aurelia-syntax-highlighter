@@ -4,13 +4,26 @@ var fs = require('fs');
 var appRoot = 'src/';
 var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 
-module.exports = {
+var paths = {
   root: appRoot,
   source: appRoot + '**/*.js',
   html: appRoot + '**/*.html',
   output: 'dist/',
-  sample: 'sample',
   doc:'./doc',
   tests: 'test/**/*.js',
-  packageName: pkg.name
+  packageName: pkg.name,
+  useTypeScriptForDTS: false,
+  importsToAdd: [],
+  sort: true
 };
+
+paths.ignore = ['index.js'];
+paths.files = [
+  'syntax-highlighter.js'
+].map(function(file){
+  return paths.root + file;
+});
+
+paths.sample = 'sample';
+
+module.exports = paths;

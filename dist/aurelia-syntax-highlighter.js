@@ -1,9 +1,10 @@
 import 'prismjs';
-import {customAttribute,inject} from 'aurelia-framework';
+import {customAttribute} from 'aurelia-templating';
 
 @customAttribute('au-syntax')
-@inject(Element)
 export class SyntaxHighlighter {
+  static inject = [Element];
+
   constructor(element) {
     this.element = element;
   }

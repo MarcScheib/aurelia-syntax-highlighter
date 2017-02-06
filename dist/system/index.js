@@ -1,23 +1,18 @@
 'use strict';
 
-System.register(['./syntax-highlighter'], function (_export, _context) {
+System.register(['./aurelia-syntax-highlighter'], function (_export, _context) {
   "use strict";
 
-  var SyntaxHighlighter;
-
-
-  function configure(config) {
-    config.globalResources('./syntax-highlighter');
-  }
-
   return {
-    setters: [function (_syntaxHighlighter) {
-      SyntaxHighlighter = _syntaxHighlighter.SyntaxHighlighter;
-    }],
-    execute: function () {
-      _export('SyntaxHighlighter', SyntaxHighlighter);
+    setters: [function (_aureliaSyntaxHighlighter) {
+      var _exportObj = {};
 
-      _export('configure', configure);
-    }
+      for (var _key in _aureliaSyntaxHighlighter) {
+        if (_key !== "default" && _key !== "__esModule") _exportObj[_key] = _aureliaSyntaxHighlighter[_key];
+      }
+
+      _export(_exportObj);
+    }],
+    execute: function () {}
   };
 });

@@ -13,17 +13,13 @@ gulp.task('bump-version', function () {
 });
 
 gulp.task('changelog', function () {
-  var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
-
   return gulp.src(paths.doc + '/CHANGELOG.md', {
       buffer: false
     })
     .pipe(changelog({
-      preset: 'angular',
-      repository: pkg.repository.url,
-      version: pkg.version
+      preset: 'angular'
     }))
-    .pipe(gulp.dest(paths.doc + '/'));
+    .pipe(gulp.dest(paths.doc));
 });
 
 gulp.task('prepare-release', function (callback) {
