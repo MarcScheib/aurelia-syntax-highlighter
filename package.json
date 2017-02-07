@@ -25,7 +25,7 @@
   },
   "jspm": {
     "registry": "npm",
-    "main": "index",
+    "main": "aurelia-syntax-highlighter",
     "format": "amd",
     "directories": {
       "lib": "dist/amd"

@@ -1,4 +1,4 @@
-import {configure} from '../../src/index';
+import {configure} from '../../src/aurelia-syntax-highlighter';
 
 describe('the syntax highlighter configure routine', () => {
   it('should globalize the syntax attribute', () => {
