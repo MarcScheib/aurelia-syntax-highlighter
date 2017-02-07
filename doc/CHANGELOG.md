@@ -1,3 +1,8 @@
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/MarcScheib/aurelia-syntax-highlighter/compare/0.0.4...v0.1.0) (2017-02-07)
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/MarcScheib/aurelia-syntax-highlighter/compare/0.0.3...v0.0.4) (2016-05-22)
 
