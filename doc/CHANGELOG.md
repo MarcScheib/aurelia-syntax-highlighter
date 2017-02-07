@@ -1,3 +1,13 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/MarcScheib/aurelia-syntax-highlighter/compare/0.1.0...v0.1.1) (2017-02-07)
+
+
+### Bug Fixes
+
+* fix naming problems with index file ([c844b98](https://github.com/MarcScheib/aurelia-syntax-highlighter/commit/c844b98))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/MarcScheib/aurelia-syntax-highlighter/compare/0.0.4...v0.1.0) (2017-02-07)
 
