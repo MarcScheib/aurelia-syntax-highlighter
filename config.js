@@ -17,6 +17,7 @@ System.config({
   map: {
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.1.1",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.3.1",
+    "aurelia-framework": "npm:aurelia-framework@1.1.2",
     "aurelia-loader": "npm:aurelia-loader@1.0.0",
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.2",
     "aurelia-metadata": "npm:aurelia-metadata@1.0.3",
