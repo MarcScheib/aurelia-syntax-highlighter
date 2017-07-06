@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/MarcScheib/aurelia-syntax-highlighter.svg?branch=master)](https://travis-ci.org/MarcScheib/aurelia-syntax-highlighter) 
 [![Coverage Status](https://coveralls.io/repos/github/MarcScheib/aurelia-syntax-highlighter/badge.svg?branch=master)](https://coveralls.io/github/MarcScheib/aurelia-syntax-highlighter?branch=master)
-[![Dependency Status](https://img.shields.io/david/MarcScheib/aurelia-syntax-highlighter.svg?style=flat-square)](https://david-dm.org/MarcScheib/aurelia-syntax-highlighter)
+[![Dependency Status](https://img.shields.io/david/MarcScheib/aurelia-syntax-highlighter.svg)](https://david-dm.org/MarcScheib/aurelia-syntax-highlighter)
 [![devDependency Status](https://img.shields.io/david/dev/MarcScheib/aurelia-syntax-highlighter.svg)](https://david-dm.org/MarcScheib/aurelia-syntax-highlighter?type=dev)
 [![npm Version](https://img.shields.io/npm/v/aurelia-syntax-highlighter.svg)](https://www.npmjs.com/package/aurelia-syntax-highlighter)
 
