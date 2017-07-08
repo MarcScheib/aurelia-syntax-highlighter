@@ -38,8 +38,13 @@ gulp.task('cover', function (done) {
       'src/**/*.js': ['babel', 'coverage']
     },
     coverageReporter: {
-      type: 'html',
-      dir: 'build/reports/coverage'
+      dir: 'build/reports/coverage',
+      reporters: [
+        // reporters not supporting the `file` property
+        {type: 'html', subdir: 'html'},
+        {type: 'lcov', subdir: 'lcov'},
+        {type: 'text-summary'}
+      ]
     }
   }, done).start();
 });

@@ -21,17 +21,18 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       [paths.tests]: ['babel'],
-      [paths.source]: ['babel', 'coverage']
+      [paths.source]: ['babel']
     },
 
     'babelPreprocessor': {
       options: {
         sourceMap: 'inline',
-        presets: [ 'es2015-loose', 'stage-1'],
+        presets: [['es2015', {loose: true}], 'stage-1'],
         plugins: [
           'syntax-flow',
           'transform-decorators-legacy',
-          'transform-flow-strip-types'
+          'transform-flow-strip-types',
+          'istanbul'
         ]
       }
     },
