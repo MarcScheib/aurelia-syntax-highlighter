@@ -1,12 +1,10 @@
 var path = require('path');
 var paths = require('./paths');
 
-
 exports.base = function () {
   var config = {
     filename: '',
     filenameRelative: '',
-    sourceMap: true,
     sourceRoot: '',
     moduleRoot: path.resolve('src').replace(/\\/g, '/'),
     moduleIds: false,
@@ -19,6 +17,7 @@ exports.base = function () {
       'transform-decorators-legacy',
     ]
   };
+
   if (!paths.useTypeScriptForDTS) {
     config.plugins.push(
       ['babel-dts-generator', {
