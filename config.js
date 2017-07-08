@@ -26,6 +26,7 @@ System.config({
     "aurelia-polyfills": "npm:aurelia-polyfills@1.2.2",
     "aurelia-templating": "npm:aurelia-templating@1.4.2",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.3.0",
+    "aurelia-testing": "npm:aurelia-testing@1.0.0-beta.3.0.1",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
@@ -168,6 +169,13 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.3.0",
       "aurelia-path": "npm:aurelia-path@1.1.1",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.2.0"
+    },
+    "npm:aurelia-testing@1.0.0-beta.3.0.1": {
+      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.3.1",
+      "aurelia-framework": "npm:aurelia-framework@1.1.2",
+      "aurelia-logging": "npm:aurelia-logging@1.3.1",
+      "aurelia-pal": "npm:aurelia-pal@1.3.0",
+      "aurelia-templating": "npm:aurelia-templating@1.4.2"
     },
     "npm:babel-runtime@5.8.38": {
       "process": "github:jspm/nodelibs-process@0.1.2"
