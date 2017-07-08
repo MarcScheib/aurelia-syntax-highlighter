@@ -1,7 +1,13 @@
-import { SyntaxHighlighter } from './syntax-highlighter';
+'use strict';
+
+exports.__esModule = true;
+exports.configure = exports.SyntaxHighlighter = undefined;
+
+var _syntaxHighlighter = require('./syntax-highlighter');
 
 function configure(config) {
   config.globalResources('./syntax-highlighter');
 }
 
-export { SyntaxHighlighter, configure };
+exports.SyntaxHighlighter = _syntaxHighlighter.SyntaxHighlighter;
+exports.configure = configure;

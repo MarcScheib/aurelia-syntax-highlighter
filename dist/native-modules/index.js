@@ -1,1 +1,15 @@
-export * from './aurelia-syntax-highlighter';
+'use strict';
+
+exports.__esModule = true;
+
+var _aureliaSyntaxHighlighter = require('./aurelia-syntax-highlighter');
+
+Object.keys(_aureliaSyntaxHighlighter).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _aureliaSyntaxHighlighter[key];
+    }
+  });
+});

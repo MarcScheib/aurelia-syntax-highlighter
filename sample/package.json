@@ -1,10 +1,10 @@
 {
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.0.1",
-      "aurelia-framework": "npm:aurelia-framework@^1.0.8",
-      "aurelia-pal-browser": "npm:aurelia-pal-browser@^1.1.0",
-      "aurelia-templating": "npm:aurelia-templating@^1.2.0",
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.1.1",
+      "aurelia-framework": "npm:aurelia-framework@^1.1.2",
+      "aurelia-pal-browser": "npm:aurelia-pal-browser@^1.2.1",
+      "aurelia-templating": "npm:aurelia-templating@^1.4.2",
       "prismjs": "npm:prismjs@1.5.1"
     },
     "devDependencies": {

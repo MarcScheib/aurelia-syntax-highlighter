@@ -1,11 +1,17 @@
+'use strict';
+
+exports.__esModule = true;
+exports.SyntaxHighlighter = undefined;
+
 var _dec, _class, _class2, _temp;
 
+var _aureliaTemplating = require('aurelia-templating');
+
+require('prismjs');
 
 
-import { customAttribute } from 'aurelia-templating';
-import 'prismjs';
 
-export var SyntaxHighlighter = (_dec = customAttribute('au-syntax'), _dec(_class = (_temp = _class2 = function () {
+var SyntaxHighlighter = exports.SyntaxHighlighter = (_dec = (0, _aureliaTemplating.customAttribute)('au-syntax'), _dec(_class = (_temp = _class2 = function () {
   function SyntaxHighlighter(element) {
     
 
