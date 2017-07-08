@@ -1,0 +1,22 @@
+{
+  "name": "aurelia-syntax-highlighter",
+  "version": "0.1.1",
+  "description": "An syntax highlighting plugin for Aurelia based on PrismJS.",
+  "keywords": [
+    "aurelia",
+    "syntax",
+    "highlighter",
+    "prismjs"
+  ],
+  "homepage": "http://aurelia.io",
+  "main": "dist/commonjs/index.js",
+  "moduleType": "node",
+  "license": "MIT",
+  "author": [
+    "Marc Scheib <marc.scheib@cycrilab.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcScheib/aurelia-syntax-highlighter"
+  }
+}
