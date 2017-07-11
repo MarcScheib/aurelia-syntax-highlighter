@@ -69,6 +69,14 @@ You can now use the plugin to highlight your syntax. Simply add the ```au-syntax
 }</code></pre>
 ```
 
+It is also possible to bind dynamic values to the custom attribute, e.g. to the input of a textarea:
+
+```html
+<pre><code class="language-css" au-syntax.bind="code"></code></pre>
+```
+
+This automatically updates the content of `<code>` to highlighted syntax of the value of `code` binding.
+
 ## Dependencies
 
 Aurelia dependencies:
