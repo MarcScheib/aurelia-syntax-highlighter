@@ -73,7 +73,8 @@ You can now use the plugin to highlight your syntax. Simply add the ```au-syntax
 
 Aurelia dependencies:
 
-* [aurelia-framework](https://github.com/aurelia/framework)
+* [aurelia-pal](https://github.com/aurelia/pal)
+* [aurelia-templating](https://github.com/aurelia/templating)
 
 External dependencies:
 
