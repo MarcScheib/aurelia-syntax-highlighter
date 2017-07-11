@@ -1,16 +1,19 @@
 <template>
   <h1>Syntax Highlighting</h1>
+
+  <h2>Dynamic Binding</h2>
+  <textarea value.bind="dynamic"></textarea>
+  <pre><code class="language-javascript" au-syntax.bind="dynamic"></code></pre>
+
   <h2>CSS</h2>
-  <pre><code class="language-css" au-syntax>
-.splash {
+  <pre><code class="language-css" au-syntax>.splash {
   text-align: center;
   margin: 10% 0 0 0;
   box-sizing: border-box;
 }</code></pre>
 
   <h2>JavaScript</h2>
-  <pre><code class="language-javascript" au-syntax>
-function(async, callback) {
+  <pre><code class="language-javascript" au-syntax>function(async, callback) {
   var env = {
     callback: callback,
     selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
@@ -25,5 +28,5 @@ function(async, callback) {
 }</code></pre>
 
   <h2>HTML</h2>
-  <pre><code class="language-markup" au-syntax>${html}</code></pre>
+  <pre><code class="language-markup" au-syntax.bind="html"></code></pre>
 </template>

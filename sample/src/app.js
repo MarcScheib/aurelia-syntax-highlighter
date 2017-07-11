@@ -1,8 +1,8 @@
 export class App {
   html;
-
-  constructor() {
-  }
+  dynamic = `var = {
+  "a": true
+};`;
 
   activate() {
     this.html = `<html>
