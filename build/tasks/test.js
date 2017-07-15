@@ -35,7 +35,7 @@ gulp.task('cover', function (done) {
     reporters: ['coverage'],
     preprocessors: {
       'test/**/*.js': ['babel'],
-      'src/**/*.js': ['babel', 'coverage']
+      'src/**/*.js': ['babel']
     },
     coverageReporter: {
       dir: 'build/reports/coverage',
@@ -52,7 +52,7 @@ gulp.task('cover', function (done) {
 /**
  * Report coverage to coveralls
  */
-gulp.task('coveralls', ['cover'], function (done) {
-  gulp.src('build/reports/coverage/lcov/report-lcovonly.txt')
+gulp.task('coveralls', ['cover'], function(done) {
+  gulp.src('build/reports/coverage/lcov/lcov.info')
     .pipe(coveralls());
 });
