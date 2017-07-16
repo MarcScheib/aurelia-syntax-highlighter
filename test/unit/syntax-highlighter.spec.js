@@ -39,7 +39,7 @@ describe('SyntaxHighlighter', () => {
       .then(done);
   });
 
-  xit('highlights the given syntax on value change', done => {
+  it('highlights the given syntax on value change', done => {
     component.create(bootstrap)
       .then(() => {
         spyOn(Prism, 'highlightElement');
@@ -55,10 +55,12 @@ describe('SyntaxHighlighter', () => {
         inputEl.value = newCode;
         expect(inputEl.value).toEqual(newCode);
         inputEl.dispatchEvent(DOM.createCustomEvent('change'));
-        expect(vm.code).toEqual(newCode);
-        expect(codeEl.innerText).toEqual(newCode);
-        expect(Prism.highlightElement).toHaveBeenCalled();
-      })
-      .then(done);
+        setTimeout(() => {
+          expect(vm.code).toEqual(newCode);
+          expect(codeEl.innerText).toEqual(newCode);
+          expect(Prism.highlightElement).toHaveBeenCalled();
+          done();
+        }, 50);
+      });
   });
 });
